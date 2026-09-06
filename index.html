@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Donna Vitória — Boteco Bar &amp; Grill | Santo André</title>
+<meta name="description" content="Donna Vitória, boteco bar e grill na Vila Bastos, Santo André. Carnes na brasa, petiscos, caipirinhas e drinks num ambiente de tijolo aparente e jardim vertical.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Caveat:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#140f0c;
+    --bg-2:#1c1510;
+    --panel:#241b15;
+    --panel-2:#2c2118;
+    --wood:#8a6a3f;
+    --amber:#c98a4b;
+    --amber-2:#e0ab6e;
+    --cream:#ede3d0;
+    --cream-dim:#b4a891;
+    --sage:#84906a;
+    --line: rgba(201,138,75,.28);
+    --maxw: 1120px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--cream);
+    font-family:'Inter',sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.script{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    margin:0;
+    color:var(--cream);
+  }
+  .script{
+    font-family:'Caveat',cursive;
+    font-weight:700;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px;}
+  .eyebrow-none{display:none;}
+
+  /* ---------- NAV ---------- */
+  header.site-nav{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background: rgba(20,15,12,0); 
+    transition: background .35s ease, box-shadow .35s ease, padding .35s ease;
+    padding: 22px 0;
+  }
+  header.site-nav.scrolled{
+    background: rgba(20,15,12,.94);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 1px 0 var(--line);
+    padding: 12px 0;
+  }
+  .nav-inner{
+    max-width:var(--maxw); margin:0 auto; padding:0 24px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .nav-logo{
+    font-family:'Caveat',cursive; font-weight:700;
+    font-size:1.9rem; color:var(--amber-2);
+    letter-spacing:.5px;
+  }
+  nav.links{display:flex; gap:30px;}
+  nav.links a{
+    font-size:.92rem; color:var(--cream-dim);
+    padding-bottom:4px; border-bottom:1px solid transparent;
+    transition:color .2s, border-color .2s;
+  }
+  nav.links a:hover{color:var(--amber-2); border-color:var(--amber);}
+  .nav-cta{
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--amber); color:#1a1209;
+    padding:9px 18px; border-radius:2px; font-weight:600; font-size:.88rem;
+    transition:background .2s;
+  }
+  .nav-cta:hover{background:var(--amber-2);}
+  .nav-toggle{display:none;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    display:flex; align-items:flex-end;
+    background: linear-gradient(180deg, rgba(15,11,8,.35) 0%, rgba(12,9,7,.55) 55%, rgba(10,7,6,.96) 100%), url('assets/venue/facade.jpg');
+    background-size:cover; background-position:center 30%;
+  }
+  .hero-inner{
+    width:100%;
+    padding: 140px 0 64px;
+  }
+  .badge{
+    display:inline-flex; flex-direction:column; align-items:center;
+    border:1px solid var(--line);
+    padding: 22px 40px 20px;
+    margin-bottom:28px;
+  }
+  .badge .crown{width:22px; height:22px; margin-bottom:6px; fill:var(--amber-2);}
+  .badge .small-caps{
+    font-family:'Inter',sans-serif; font-size:.72rem; letter-spacing:.28em;
+    color:var(--cream-dim); font-weight:600;
+  }
+  .badge .wordmark{
+    font-family:'Caveat',cursive; font-weight:700; font-size:3.4rem;
+    color:var(--cream); line-height:1; margin:4px 0 6px;
+  }
+  .hero h1{
+    max-width:640px;
+    font-size:clamp(1.7rem, 3.4vw, 2.5rem);
+    font-weight:500;
+    color:var(--cream);
+    letter-spacing:.2px;
+  }
+  .hero p.lede{
+    max-width:520px; margin-top:18px;
+    color:var(--cream-dim); font-size:1.05rem;
+  }
+  .hero-actions{display:flex; gap:16px; margin-top:34px; flex-wrap:wrap;}
+  .btn{
+    display:inline-flex; align-items:center; gap:10px;
+    padding:14px 26px; font-size:.95rem; font-weight:600;
+    border-radius:2px; border:1px solid transparent; cursor:pointer;
+  }
+  .btn-primary{background:var(--amber); color:#1a1209;}
+  .btn-primary:hover{background:var(--amber-2);}
+  .btn-outline{border-color: var(--line); color:var(--cream);}
+  .btn-outline:hover{border-color:var(--amber);}
+  .btn svg{width:18px; height:18px;}
+
+  /* ---------- SECTION GENERIC ---------- */
+  section{padding:96px 0;}
+  section.tight{padding:64px 0;}
+  .section-head{max-width:640px; margin-bottom:48px;}
+  .section-head h2{font-size:clamp(2rem,3.4vw,2.7rem); font-weight:600;}
+  .section-head .script{font-size:1.4em; color:var(--amber-2); display:inline;}
+  .section-head p{color:var(--cream-dim); margin-top:14px; font-size:1.05rem; max-width:520px;}
+  .rule{width:64px; height:2px; background:var(--amber); margin-bottom:22px;}
+
+  /* ---------- SOBRE ---------- */
+  #sobre{background:var(--bg-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .sobre-grid{
+    display:grid; grid-template-columns:1.05fr .95fr; gap:64px; align-items:center;
+  }
+  .sobre-text p{color:var(--cream-dim); font-size:1.05rem; margin:0 0 18px;}
+  .sobre-text p:first-of-type{color:var(--cream); font-size:1.2rem; line-height:1.65;}
+  .sobre-photo{position:relative;}
+  .sobre-photo img{
+    width:100%; height:520px; object-fit:cover; object-position:center 30%;
+  }
+  .sobre-photo .tag{
+    position:absolute; left:-24px; bottom:-24px;
+    background:var(--panel); border:1px solid var(--line);
+    padding:18px 22px; max-width:230px;
+  }
+  .sobre-photo .tag .script{font-size:1.5rem; color:var(--amber-2); display:block;}
+  .sobre-photo .tag span.d{font-size:.85rem; color:var(--cream-dim); display:block; margin-top:2px;}
+
+  /* ---------- DESTAQUES ---------- */
+  .destaques-strip{
+    display:grid; grid-template-columns: 1.3fr 1fr 1fr; gap:20px;
+  }
+  .dest-card{position:relative; overflow:hidden; background:var(--panel);}
+  .dest-card img{width:100%; height:100%; object-fit:cover; transition:transform .5s ease;}
+  .dest-card:hover img{transform:scale(1.05);}
+  .dest-card .cap{
+    position:absolute; left:0; right:0; bottom:0;
+    padding:22px 22px 18px;
+    background:linear-gradient(0deg, rgba(10,7,5,.92) 10%, rgba(10,7,5,0) 100%);
+  }
+  .dest-card .cap h3{font-size:1.25rem; font-weight:500; color:var(--cream);}
+  .dest-card .cap .price{color:var(--amber-2); font-size:.95rem; margin-top:4px; font-family:'Inter',sans-serif; font-weight:600;}
+  .dest-card.tall{grid-row: span 2; min-height:520px;}
+  .dest-card.short{min-height:250px;}
+
+  /* ---------- CARDAPIO TABS ---------- */
+  #cardapio{background:var(--bg);}
+  .tabs{
+    display:flex; gap:10px; overflow-x:auto; padding-bottom:6px; margin-bottom:40px;
+    scrollbar-width:none;
+  }
+  .tabs::-webkit-scrollbar{display:none;}
+  .tab-btn{
+    flex:none;
+    background:transparent; border:1px solid var(--line); color:var(--cream-dim);
+    padding:10px 18px; font-size:.9rem; font-family:'Inter',sans-serif; cursor:pointer;
+    white-space:nowrap; transition:all .2s;
+  }
+  .tab-btn.active{background:var(--amber); border-color:var(--amber); color:#1a1209; font-weight:600;}
+  .tab-btn:hover:not(.active){border-color:var(--amber); color:var(--amber-2);}
+
+  .menu-panel{display:none;}
+  .menu-panel.active{display:block; animation:fadein .3s ease;}
+  @keyframes fadein{from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:translateY(0);}}
+
+  .menu-group{margin-bottom:38px;}
+  .menu-group:last-child{margin-bottom:0;}
+  .menu-group h3{
+    font-size:1.15rem; font-weight:600; color:var(--amber-2);
+    padding-bottom:10px; margin-bottom:18px; border-bottom:1px solid var(--line);
+    display:flex; justify-content:space-between; align-items:baseline; gap:12px;
+  }
+  .menu-group h3 .note{font-family:'Inter',sans-serif; font-size:.78rem; font-weight:500; color:var(--cream-dim);}
+  .menu-item{
+    display:flex; justify-content:space-between; gap:20px;
+    padding:13px 0; border-bottom:1px dashed rgba(201,138,75,.15);
+  }
+  .menu-item:last-child{border-bottom:none;}
+  .mi-left{max-width:78%;}
+  .mi-name{font-size:1rem; color:var(--cream); font-weight:500;}
+  .mi-desc{font-size:.88rem; color:var(--cream-dim); margin-top:3px;}
+  .mi-price{font-family:'Inter',sans-serif; font-weight:600; color:var(--amber-2); white-space:nowrap; font-size:.95rem;}
+
+  .flavor-list{
+    columns:2; column-gap:32px; margin-top:6px;
+  }
+  .flavor-list div{font-size:.88rem; color:var(--cream-dim); padding:4px 0; break-inside:avoid;}
+
+  .menu-footnote{
+    margin-top:36px; padding-top:22px; border-top:1px solid var(--line);
+    color:var(--cream-dim); font-size:.88rem; display:flex; justify-content:space-between; flex-wrap:wrap; gap:14px;
+  }
+  .menu-footnote a{color:var(--amber-2); font-weight:600;}
+
+  /* ---------- BEBIDAS SHOWCASE ---------- */
+  #bebidas-showcase{background:var(--bg-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .drinks-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  .drink-card img{width:100%; height:340px; object-fit:cover;}
+  .drink-card .name{margin-top:14px; font-size:1.05rem; font-weight:500; color:var(--cream);}
+  .drink-card .desc{color:var(--cream-dim); font-size:.88rem; margin-top:3px;}
+
+  /* ---------- AMBIENTE / GALERIA ---------- */
+  .gallery{
+    display:grid; grid-template-columns:repeat(4, 1fr); grid-auto-rows:170px; gap:14px;
+  }
+  .gallery a{grid-column:span 1; grid-row:span 1; overflow:hidden; display:block; position:relative;}
+  .gallery a.big{grid-column:span 2; grid-row:span 2;}
+  .gallery img{width:100%; height:100%; object-fit:cover; transition:transform .5s ease;}
+  .gallery a:hover img{transform:scale(1.06);}
+
+  /* ---------- LOCALIZACAO ---------- */
+  #local{background:var(--bg-2); border-top:1px solid var(--line);}
+  .local-grid{display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:start;}
+  .info-row{display:flex; gap:16px; padding:18px 0; border-bottom:1px solid var(--line);}
+  .info-row:last-child{border-bottom:none;}
+  .info-row svg{width:20px; height:20px; flex:none; fill:var(--amber-2); margin-top:2px;}
+  .info-row .lbl{font-size:.78rem; color:var(--cream-dim); letter-spacing:.05em; margin-bottom:3px;}
+  .info-row .val{font-size:1rem; color:var(--cream);}
+  .info-row .val a:hover{color:var(--amber-2);}
+  .social-row{display:flex; gap:14px; margin-top:26px;}
+  .social-row a{
+    width:42px; height:42px; border:1px solid var(--line); display:flex; align-items:center; justify-content:center;
+    transition:border-color .2s, background .2s;
+  }
+  .social-row a:hover{border-color:var(--amber); background:rgba(201,138,75,.08);}
+  .social-row svg{width:19px; height:19px; fill:var(--cream);}
+  .mapbox{width:100%; height:440px; border:1px solid var(--line); filter:grayscale(.3) contrast(1.05);}
+  .mapbox iframe{width:100%; height:100%; border:0;}
+
+  /* ---------- FOOTER ---------- */
+  footer{padding:40px 0; border-top:1px solid var(--line); background:var(--bg);}
+  .footer-inner{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;}
+  .footer-inner .script{font-size:1.6rem; color:var(--amber-2);}
+  footer .fine{color:var(--cream-dim); font-size:.82rem;}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 860px){
+    nav.links{display:none;}
+    .nav-toggle{display:block; background:none; border:none;}
+    .nav-toggle svg{width:24px; height:24px; fill:var(--cream);}
+    .sobre-grid{grid-template-columns:1fr; gap:40px;}
+    .sobre-photo img{height:360px;}
+    .sobre-photo .tag{left:16px; bottom:16px;}
+    .destaques-strip{grid-template-columns:1fr 1fr; grid-auto-rows:220px;}
+    .dest-card.tall{grid-row:span 2; min-height:auto;}
+    .dest-card.short{min-height:auto;}
+    .drinks-grid{grid-template-columns:1fr; }
+    .gallery{grid-template-columns:repeat(2,1fr); grid-auto-rows:150px;}
+    .gallery a.big{grid-column:span 2; grid-row:span 2;}
+    .local-grid{grid-template-columns:1fr; gap:36px;}
+    .badge{padding:16px 24px;}
+    .badge .wordmark{font-size:2.6rem;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-nav" id="siteNav">
+  <div class="nav-inner">
+    <div class="nav-logo">Donna Vitória</div>
+    <nav class="links">
+      <a href="#sobre">Sobre</a>
+      <a href="#cardapio">Cardápio</a>
+      <a href="#bebidas-showcase">Bebidas</a>
+      <a href="#ambiente">Ambiente</a>
+      <a href="#local">Localização</a>
+    </nav>
+    <a class="nav-cta" href="https://wa.me/5511954361716" target="_blank" rel="noopener">Reservar</a>
+  </div>
+</header>
+
+<section class="hero" id="topo">
+  <div class="wrap hero-inner">
+    <div class="badge">
+      <svg class="crown" viewBox="0 0 24 24"><path d="M3 18h18l1.5-9-5.5 4-5-7-5 7-5.5-4L3 18Zm0 2h18v2H3v-2Z"/></svg>
+      <span class="small-caps">Boteco</span>
+      <span class="wordmark">Donna Vitória</span>
+      <span class="small-caps">Bar · Grill</span>
+    </div>
+    <h1>Tijolo aparente, jardim vertical e a brasa acesa desde o começo da noite, na Vila Bastos.</h1>
+    <p class="lede">Petiscos generosos, carnes na brasa e caipirinhas de mais de vinte sabores num salão de pé-direito alto e varanda aberta para a Lino Jardim.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#cardapio">Ver cardápio completo</a>
+      <a class="btn btn-outline" href="https://wa.me/5511954361716" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.5-.8-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5C10.1 9 9.6 7.8 9.4 7.3c-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.5.1-.7.3-.2.3-1 1-1 2.3s1 2.7 1.1 2.9c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3z"/><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.5A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .9.9-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Z"/></svg>
+        Falar no WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="sobre">
+  <div class="wrap sobre-grid">
+    <div class="sobre-text">
+      <div class="rule"></div>
+      <h2 style="margin-bottom:22px; font-size:clamp(1.9rem,3vw,2.4rem);">Um boteco que virou <span class="script" style="color:var(--amber-2); font-size:1.15em;">ponto de encontro</span> na Vila Bastos</h2>
+      <p>O Donna Vitória nasceu para ser aquele lugar de esquina onde a família reúne todo mundo e os amigos combinam de chegar "só pra uma". Fachada de tijolo, teto de madeira, parede verde na entrada e mesas que enchem cedo na sexta.</p>
+      <p>Na cozinha, o forte é a brasa: picanha, costela casquerada e fraldinha saem fumegando das tábuas, ao lado de petiscos de boteco como bolinho de bacalhau, torresmo no rolo e dadinho de tapioca. No bar, o rodízio de caipirinha com quase vinte sabores divide espaço com drinks autorais e uma boa carta de chopp.</p>
+      <p>É comida farta, atendimento de casa e aquele clima de "coisas boas acontecem aqui" — like está escrito bem na parede do salão.</p>
+    </div>
+    <div class="sobre-photo">
+      <img src="assets/venue/interior.jpg" alt="Salão interno do Donna Vitória, com estrutura de madeira e mesas de boteco">
+      <div class="tag">
+        <span class="script">Coisas boas<br>acontecem aqui</span>
+        <span class="d">— escrito na parede do salão</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="destaques" class="tight">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="rule"></div>
+      <h2>Da brasa direto pra mesa</h2>
+      <p>Uma pequena amostra do que sai mais na cozinha — o cardápio completo está logo abaixo.</p>
+    </div>
+    <div class="destaques-strip">
+      <div class="dest-card tall">
+        <img src="assets/venue/picanha-queijo.jpg" alt="Picanha na chapa coberta com queijo derretido">
+        <div class="cap"><h3>Picanha no Aligot</h3><div class="price">R$ 239,00 · serve 2–3 pessoas</div></div>
+      </div>
+      <div class="dest-card short">
+        <img src="assets/food/costela-casquerada.jpg" alt="Costela casquerada com mandioca e farofa">
+        <div class="cap"><h3>Costela Casquerada</h3><div class="price">R$ 210,00</div></div>
+      </div>
+      <div class="dest-card short">
+        <img src="assets/food/bolinho-bacalhau.jpg" alt="Porção de bolinhos de bacalhau">
+        <div class="cap"><h3>Bolinho de Bacalhau</h3><div class="price">R$ 84,90 · 8 un</div></div>
+      </div>
+      <div class="dest-card short">
+        <img src="assets/food/torresmo-rolo.jpg" alt="Torresmo no rolo Donna Vitória">
+        <div class="cap"><h3>Torresmo no Rolo</h3><div class="price">R$ 82,00</div></div>
+      </div>
+      <div class="dest-card short">
+        <img src="assets/food/tabua-donna-vitoria.jpg" alt="Tábua Donna Vitória com picanha, linguiça e queijo coalho">
+        <div class="cap"><h3>Tábua Donna Vitória</h3><div class="price">R$ 240,00</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cardapio">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="rule"></div>
+      <h2>Cardápio</h2>
+      <p>Todos os preços conforme o cardápio atual do salão. Podem mudar sem aviso prévio.</p>
+    </div>
+
+    <div class="tabs" id="tabs">
+      <button class="tab-btn active" data-tab="entradas">Entradas &amp; Petiscos</button>
+      <button class="tab-btn" data-tab="brasa">Carnes na Brasa</button>
+      <button class="tab-btn" data-tab="peixes">Peixes &amp; Especiais</button>
+      <button class="tab-btn" data-tab="massas">Massas, Risotos &amp; Saladas</button>
+      <button class="tab-btn" data-tab="kids">Kids &amp; Lanches</button>
+      <button class="tab-btn" data-tab="sobremesas">Sobremesas</button>
+      <button class="tab-btn" data-tab="cervejas">Cervejas &amp; Destilados</button>
+      <button class="tab-btn" data-tab="caipirinha">Caipirinha 500ml</button>
+      <button class="tab-btn" data-tab="drinks">Drinks</button>
+    </div>
+
+    <!-- ENTRADAS -->
+    <div class="menu-panel active" id="panel-entradas">
+      <div class="menu-group">
+        <h3>Entradas</h3>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Palmito Gratinado</div></div><div class="mi-price">R$ 99,00</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Escondidinho de Carne Seca</div><div class="mi-desc">com mandioca gratinado</div></div><div class="mi-price">R$ 92,00</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Escondidinho de Filé Mignon</div><div class="mi-desc">com mandioca gratinado</div></div><div class="mi-price">R$ 92,00</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Burrata</div><div class="mi-desc">ao molho de pesto com tomate cereja</div></div><div class="mi-price">R$ 75,00</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Brusqueta — Tomate, Mussarela e Manjericão</div><div class="mi-desc">6 unidades</div></div><div class="mi-price">R$ 59,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Brusqueta — Carne Seca com Queijo Coalho</div><div class="mi-desc">6 unidades</div></div><div class="mi-price">R$ 59,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Carpaccio</div><div class="mi-desc">finas fatias de filé mignon, molho de alcaparras, mostarda e parmesão, acompanha torradas</div></div><div class="mi-price">R$ 69,90</div></div>
+      </div>
+      <div class="menu-group">
+        <h3>Bolinhos <span class="note">especial 8 unidades</span></h3>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Bolinho de Bacalhau</div></div><div class="mi-price">R$ 84,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Bolinho de Costela Casquerada</div></div><div class="mi-price">R$ 78,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Bolinho de Mandioca com Carne Seca</div></div><div class="mi-price">R$ 78,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Bolinho de Calabresa com Queijo</div></div><div class="mi-price">R$ 68,90</div></div>
+      </div>
+      <div class="menu-group">
+        <h3>Comida de Boteco</h3>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Batata Frita Simples</div></div><div class="mi-price">R$ 49,00</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Batata Frita com Cheddar e Bacon</div></div><div class="mi-price">R$ 65,00</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Batata Frita com Aligot e Costela Desfiada</div></div><div class="mi-price">R$ 69,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Mandioca Frita</div></div><div class="mi-price">R$ 52,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Polenta com Parmesão</div></div><div class="mi-price">R$ 52,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Dadinho de Tapioca</div></div><div class="mi-price">R$ 60,00</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Frango à Passarinho com Polenta Frita</div></div><div class="mi-price">R$ 75,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Calabresa Acebolada com Mandioca Frita</div></div><div class="mi-price">R$ 79,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Torresmo no Rolo Donna Vitória</div></div><div class="mi-price">R$ 82,00</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Isca de Tilápia com Molho Tártaro</div></div><div class="mi-price">R$ 79,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Provolone à Milanesa</div></div><div class="mi-price">R$ 79,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Isca de Frango com Molho da Casa</div></div><div class="mi-price">R$ 69,90</div></div>
+      </div>
+      <div class="menu-group">
+        <h3>Pastel Donna Vitória <span class="note">10 unidades</span></h3>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Carne, Queijo, Palmito e Costela</div><div class="mi-desc">acompanha vinagrete</div></div><div class="mi-price">R$ 79,90</div></div>
+      </div>
+    </div>
+
+    <!-- CARNES NA BRASA -->
+    <div class="menu-panel" id="panel-brasa">
+      <div class="menu-group">
+        <h3>Aperitivo Donna Vitória</h3>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Filé Mignon ao Molho Madeira</div><div class="mi-desc">acompanha pão</div></div><div class="mi-price">R$ 149,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Filé Mignon Gratinado ao Molho de Gorgonzola</div><div class="mi-desc">acompanha pão</div></div><div class="mi-price">R$ 158,00</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Filé Mignon Gratinado com Catupiry e Parmesão</div><div class="mi-desc">acompanha pão</div></div><div class="mi-price">R$ 159,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Picanha Aperitivo</div><div class="mi-desc">acompanha pão, vinagrete e farofa</div></div><div class="mi-price">R$ 159,90</div></div>
+      </div>
+      <div class="menu-group">
+        <h3>Linguiça Artesanal na Brasa</h3>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Gorgonzola com Mel</div><div class="mi-desc">toque de hortelã, acompanha pão, vinagrete e farofa</div></div><div class="mi-price">R$ 99,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Raspa de Limão Siciliano com Dedo de Moça</div><div class="mi-desc">acompanha pão, vinagrete e farofa</div></div><div class="mi-price">R$ 99,90</div></div>
+      </div>
+      <div class="menu-group">
+        <h3>Pratos à la Carte na Brasa <span class="note">serve de 2 a 3 pessoas</span></h3>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Costela Casquerada</div><div class="mi-desc">mandioca cozida, arroz branco, feijão tropeiro, vinagrete e farofa</div></div><div class="mi-price">R$ 210,00</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Cupim Casquerado</div><div class="mi-desc">arroz biro biro, feijão tropeiro, vinagrete e farofa</div></div><div class="mi-price">R$ 189,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Costelinha com Barbecue</div><div class="mi-desc">acompanha batata bolinha, vinagrete e farofa</div></div><div class="mi-price">R$ 189,00</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Bife Ancho Angus na Crosta de Alho</div><div class="mi-desc">arroz biro biro, batata frita, vinagrete e farofa</div></div><div class="mi-price">R$ 239,00</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Bife Ancho Angus</div><div class="mi-desc">arroz branco, batata frita, vinagrete e farofa</div></div><div class="mi-price">R$ 199,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Filé à Parmegiana Gratinado</div><div class="mi-desc">arroz branco e batata frita</div></div><div class="mi-price">R$ 189,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Fraldinha na Brasa</div><div class="mi-desc">arroz branco, batata frita, vinagrete e farofa</div></div><div class="mi-price">R$ 189,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Maminha na Telha com Aligot</div><div class="mi-desc">mandioca frita, arroz biro biro, vinagrete e farofa</div></div><div class="mi-price">R$ 199,00</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Picanha Donna Vitória</div><div class="mi-desc">arroz branco, batata frita, vinagrete e farofa</div></div><div class="mi-price">R$ 210,00</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Picanha no Aligot</div><div class="mi-desc">arroz biro biro, batata rústica, vinagrete e farofa</div></div><div class="mi-price">R$ 239,00</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Tábua Donna Vitória</div><div class="mi-desc">picanha, tulipa, linguiça toscana, coração de frango, costelinha de porco e queijo coalho, com arroz branco, vinagrete e farofa</div></div><div class="mi-price">R$ 240,00</div></div>
+      </div>
+    </div>
+
+    <!-- PEIXES & ESPECIAIS -->
+    <div class="menu-panel" id="panel-peixes">
+      <div class="menu-group">
+        <h3>Peixes &amp; Frutos do Mar <span class="note">para 2 ou 3 pessoas</span></h3>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Tábua Frutos do Mar</div><div class="mi-desc">camarão, lula, saint peter e salmão, servido com arroz, purê de batata e legumes</div></div><div class="mi-price">R$ 250,00</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Salmão ao Molho de Maracujá</div><div class="mi-desc">arroz de brócolis, legumes salteados na manteiga</div></div><div class="mi-price">R$ 210,00</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Peixe Donna Vitória</div><div class="mi-desc">filé de saint peter, servido com arroz branco e legumes</div></div><div class="mi-price">R$ 189,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Chapa Donna Vitória</div><div class="mi-desc">filé mignon, mussarela, arroz birô biro, batata frita, rúcula e tomate seco</div></div><div class="mi-price">R$ 199,90</div></div>
+      </div>
+      <div class="menu-group">
+        <h3>Pratos Executivos <span class="note">de terça a sexta</span></h3>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Filé Mignon Parmegiana</div><div class="mi-desc">arroz branco e batata frita</div></div><div class="mi-price">R$ 68,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Bife Ancho Angus</div><div class="mi-desc">arroz branco, batata frita, vinagrete e farofa</div></div><div class="mi-price">R$ 66,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Salmão com Molho de Maracujá</div><div class="mi-desc">arroz branco e legumes salteados</div></div><div class="mi-price">R$ 69,90</div></div>
+      </div>
+    </div>
+
+    <!-- MASSAS -->
+    <div class="menu-panel" id="panel-massas">
+      <div class="menu-group">
+        <h3>Salada</h3>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Salada Donna Vitória</div><div class="mi-desc">rúcula, tomate seco e mussarela de búfala</div></div><div class="mi-price">R$ 55,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Salada Verde</div><div class="mi-desc">alface americano, rúcula, alface crespa, palmito e tomate</div></div><div class="mi-price">R$ 48,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Salada Caesar</div><div class="mi-desc">alface americano, tiras de frango crocante, molho caesar e parmesão ralado</div></div><div class="mi-price">R$ 49,90</div></div>
+      </div>
+      <div class="menu-group">
+        <h3>Massas e Risotos <span class="note">pratos individuais</span></h3>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Risoto de Palmito</div></div><div class="mi-price">R$ 69,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Risoto de Funghi</div></div><div class="mi-price">R$ 79,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Risoto de Tomate Seco</div></div><div class="mi-price">R$ 69,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Spaghetti</div><div class="mi-desc">sugo ou molho branco</div></div><div class="mi-price">R$ 59,00</div></div>
+      </div>
+      <div class="menu-group">
+        <h3>Escolha sua Proteína</h3>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Medalhão de Mignon</div></div><div class="mi-price">R$ 39,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Salmão Grelhado</div></div><div class="mi-price">R$ 39,90</div></div>
+      </div>
+      <div class="menu-group">
+        <h3>Caldos <span class="note">300ml</span></h3>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Canja, Feijão, Caldo Verde ou Mandioquinha</div><div class="mi-desc">acompanha torradas e queijo ralado</div></div><div class="mi-price">R$ 39,90</div></div>
+      </div>
+    </div>
+
+    <!-- KIDS & LANCHES -->
+    <div class="menu-panel" id="panel-kids">
+      <div class="menu-group">
+        <h3>Pratos Kids</h3>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Filé Mignon</div><div class="mi-desc">servido com arroz, feijão e fritas</div></div><div class="mi-price">R$ 39,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Filé de Frango</div><div class="mi-desc">servido com arroz, feijão e fritas</div></div><div class="mi-price">R$ 35,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Penne Mignon</div></div><div class="mi-price">R$ 46,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Penne Frango</div></div><div class="mi-price">R$ 42,90</div></div>
+      </div>
+      <div class="menu-group">
+        <h3>Lanches <span class="note">feitos na baguete</span></h3>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Lanche Donna Vitória</div><div class="mi-desc">filé mignon, queijo, cebola roxa, rúcula e molho da casa, acompanha fritas</div></div><div class="mi-price">R$ 59,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">X-Burguer</div><div class="mi-desc">hambúrguer, queijo e molho, feito no pão de brioche, acompanha fritas</div></div><div class="mi-price">R$ 59,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">X-Salada Bacon</div><div class="mi-desc">hambúrguer, queijo, alface, tomate e bacon, feito no pão de brioche, acompanha fritas</div></div><div class="mi-price">R$ 79,90</div></div>
+      </div>
+    </div>
+
+    <!-- SOBREMESAS -->
+    <div class="menu-panel" id="panel-sobremesas">
+      <div class="menu-group">
+        <h3>Sobremesa</h3>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Petit Gateau</div></div><div class="mi-price">R$ 45,00</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Creme de Papaya</div></div><div class="mi-price">R$ 39,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Torta Holandesa</div></div><div class="mi-price">R$ 45,00</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Pudim</div></div><div class="mi-price">R$ 39,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Brownie com Sorvete de Creme</div></div><div class="mi-price">R$ 45,00</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Taça de Sorvete</div><div class="mi-desc">2 bolas de sorvete</div></div><div class="mi-price">R$ 32,00</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Taça Donna Vitória</div><div class="mi-desc">3 bolas de sorvete, crosta de leite ninho, nutella na borda e chocolate kinder</div></div><div class="mi-price">R$ 69,90</div></div>
+      </div>
+    </div>
+
+    <!-- CERVEJAS & DESTILADOS -->
+    <div class="menu-panel" id="panel-cervejas">
+      <div class="menu-group">
+        <h3>Bebidas sem Álcool</h3>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Refrigerantes</div><div class="mi-desc">água tônica, coca-cola, coca zero, fanta uva, fanta laranja, guaraná, soda</div></div><div class="mi-price">R$ 15,00</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">H2O Limão ou Limoneto</div></div><div class="mi-price">R$ 16,00</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Água sem/com Gás</div></div><div class="mi-price">R$ 10,50</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Água de Coco</div></div><div class="mi-price">R$ 15,00</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Sucos Naturais</div><div class="mi-desc">abacaxi, abacaxi com hortelã, laranja, limão, morango, maracujá</div></div><div class="mi-price">R$ 15,00</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Café Expresso</div></div><div class="mi-price">R$ 13,00</div></div>
+      </div>
+      <div class="menu-group">
+        <h3>Cervejas Long Neck</h3>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Heineken</div></div><div class="mi-price">R$ 19,00</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Malzebier</div></div><div class="mi-price">R$ 15,00</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Corona</div></div><div class="mi-price">R$ 20,00</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Smirnoff Ice</div></div><div class="mi-price">R$ 17,00</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Heineken 0% Álcool</div></div><div class="mi-price">R$ 19,00</div></div>
+      </div>
+      <div class="menu-group">
+        <h3>Cervejas 600ml &amp; Chopp</h3>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Heineken 600ml</div></div><div class="mi-price">R$ 25,00</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Original 600ml</div></div><div class="mi-price">R$ 23,00</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Chopp Pilsen</div><div class="mi-desc">300ml / 500ml</div></div><div class="mi-price">R$ 13,90 / 19,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Chopp Brahma Pilsen</div><div class="mi-desc">300ml / 500ml</div></div><div class="mi-price">R$ 15,90 / 19,90</div></div>
+      </div>
+      <div class="menu-group">
+        <h3>Cervejas Especiais</h3>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Baden Baden</div><div class="mi-desc">Peach, American IPA, Witbier, Golden ou Cristal</div></div><div class="mi-price">R$ 39,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Erdinger Weissbier</div></div><div class="mi-price">R$ 39,90</div></div>
+      </div>
+      <div class="menu-group">
+        <h3>Aperitivos &amp; Destilados</h3>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Campari</div></div><div class="mi-price">R$ 29,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Cointreau</div></div><div class="mi-price">R$ 24,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Amarula</div></div><div class="mi-price">R$ 30,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Licor 43</div></div><div class="mi-price">R$ 39,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Steinhaeger Nacional / Importado</div></div><div class="mi-price">R$ 24,90 / 39,00</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Rum Bacardi Ouro ou Prata</div></div><div class="mi-price">R$ 20,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Jägermeister</div></div><div class="mi-price">R$ 29,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Conhaque Domecq</div></div><div class="mi-price">R$ 25,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Martini</div></div><div class="mi-price">R$ 25,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Tequila José Cuervo Prata / Ouro</div></div><div class="mi-price">R$ 32,90 / 35,00</div></div>
+      </div>
+      <div class="menu-group">
+        <h3>Gin</h3>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Tanqueray</div></div><div class="mi-price">R$ 59,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Bombay</div></div><div class="mi-price">R$ 42,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Beefeater</div></div><div class="mi-price">R$ 42,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Gordon's</div></div><div class="mi-price">R$ 42,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Tropical</div></div><div class="mi-price">R$ 49,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Melancia</div></div><div class="mi-price">R$ 49,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Gin Tônica sabores</div><div class="mi-desc">cajú classic, pepino, limão siciliano, zimbro, frutas vermelhas</div></div></div>
+      </div>
+      <div class="menu-group">
+        <h3>Vodka <span class="note">dose / garrafa</span></h3>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Absolut</div></div><div class="mi-price">R$ 38,90 / 320,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Grey Goose</div></div><div class="mi-price">R$ 44,90 / 360,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Ciroc</div></div><div class="mi-price">R$ 39,90 / 360,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Smirnoff</div></div><div class="mi-price">R$ 34,90 / 220,90</div></div>
+      </div>
+      <div class="menu-group">
+        <h3>Cachaça</h3>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Sagatiba Ouro ou Prata / Busca Vida / Seleta / Salinas / Boazinha</div></div><div class="mi-price">R$ 25,00</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Weber Haus Prata</div></div><div class="mi-price">R$ 29,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Weber Haus 7 Madeiras</div></div><div class="mi-price">R$ 32,00</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Espírito de Minas</div></div><div class="mi-price">R$ 29,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Ypióca Prata / Ouro</div></div><div class="mi-price">R$ 14,90 / 16,90</div></div>
+      </div>
+      <div class="menu-group">
+        <h3>Whisky <span class="note">dose / garrafa</span></h3>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Red Label</div></div><div class="mi-price">R$ 45,00 / 280,00</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Black Label</div></div><div class="mi-price">R$ 50,00 / 390,00</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Gold Label</div></div><div class="mi-price">R$ 60,00 / 600,00</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Jack Daniel's</div></div><div class="mi-price">R$ 50,00 / 350,00</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Jack Daniel's Fire</div></div><div class="mi-price">R$ 50,00 / 350,00</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Jack Daniel's Honey</div></div><div class="mi-price">R$ 50,00 / 350,00</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Chivas</div></div><div class="mi-price">R$ 60,00 / 390,00</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Buchanan's</div></div><div class="mi-price">R$ 60,00 / 390,00</div></div>
+      </div>
+      <div class="menu-group">
+        <h3>Energético</h3>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Red Bull Tradicional, Tropical ou Melancia</div></div><div class="mi-price">R$ 25,00</div></div>
+      </div>
+    </div>
+
+    <!-- CAIPIRINHA -->
+    <div class="menu-panel" id="panel-caipirinha">
+      <div class="menu-group">
+        <h3>Caipirinha 500ml <span class="note">escolha a base</span></h3>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Aguardente, Cachaça Especial, Espírito de Minas, Saquê, Smirnoff ou Steinhager</div></div><div class="mi-price">R$ 42,00</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Absolut ou Ciroc</div></div><div class="mi-price">R$ 49,00</div></div>
+      </div>
+      <div class="menu-group">
+        <h3>Sabores</h3>
+        <div class="flavor-list">
+          <div>Frutas Vermelhas</div>
+          <div>Três Limões com Melado de Cana</div>
+          <div>Banana, Canela e Limão</div>
+          <div>Tangerina com Pimenta Rosa</div>
+          <div>Abacaxi com Gengibre</div>
+          <div>Jabuticaba</div>
+          <div>Limão com Yakult</div>
+          <div>Melancia com Maracujá</div>
+          <div>Abacaxi com Framboesa</div>
+          <div>Pitaya</div>
+          <div>Manga com Maracujá</div>
+          <div>Tangerina com Maracujá</div>
+          <div>Abacaxi, Limão e Maracujá</div>
+          <div>Morango com Hortelã</div>
+          <div>Kiwi com Morango</div>
+          <div>Lima da Pérsia com Gengibre</div>
+          <div>Vinho com Limão</div>
+          <div>Seriguela com Limão e Mel</div>
+          <div>Uva, Maracujá e Hortelã</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DRINKS -->
+    <div class="menu-panel" id="panel-drinks">
+      <div class="menu-group">
+        <h3>Drink's</h3>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Dry Martini</div><div class="mi-desc">gin, vermute e azeitona</div></div><div class="mi-price">R$ 52,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Mojito</div><div class="mi-desc">rum, hortelã, limão e água com gás</div></div><div class="mi-price">R$ 44,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Marguerita</div><div class="mi-desc">limão, tequila, cointreau, sal</div></div><div class="mi-price">R$ 47,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Espanhola</div><div class="mi-desc">abacaxi, leite condensado, vinho tinto</div></div><div class="mi-price">R$ 43,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Lagoa Azul</div><div class="mi-desc">vodka, suco de limão, curaçau blue, soda limonada</div></div><div class="mi-price">R$ 44,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Piña Colada</div><div class="mi-desc">leite de coco, martini, rum, suco de abacaxi, leite condensado</div></div><div class="mi-price">R$ 44,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Cuba Libre</div><div class="mi-desc">rum bacardi, suco de limão, coca-cola</div></div><div class="mi-price">R$ 43,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Sex on the Beach</div><div class="mi-desc">vodka, licor de pêssego, suco de laranja, xarope de groselha</div></div><div class="mi-price">R$ 44,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Negroni</div><div class="mi-desc">campari, carpano, gin, fatia de laranja</div></div><div class="mi-price">R$ 49,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Aperol Spritz</div><div class="mi-desc">aperol, prosecco, água com gás, fatia de laranja</div></div><div class="mi-price">R$ 48,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Sangria</div><div class="mi-desc">vinho tinto, combinação de frutas, conhaque, soda, licor de laranja, licor de pêssego — 1 litro</div></div><div class="mi-price">R$ 125,00</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Coronita</div><div class="mi-desc">tequila prata, limão, licor de laranja, sal, coronita</div></div><div class="mi-price">R$ 58,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Moscow Mule</div><div class="mi-desc">xarope de gengibre, limão, vodka, espuma de gengibre</div></div><div class="mi-price">R$ 49,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Jorge Amado</div><div class="mi-desc">cachaça, gelo, limão e maracujá</div></div><div class="mi-price">R$ 45,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Cosmopolitan</div><div class="mi-desc">vodka, gramberry, limão e cointreau</div></div><div class="mi-price">R$ 46,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Whisky Sour</div><div class="mi-desc">limão, xarope de açúcar e jack daniel's</div></div><div class="mi-price">R$ 49,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Carajillo</div><div class="mi-desc">licor 43 e café</div></div><div class="mi-price">R$ 47,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Donna Hawaiana</div><div class="mi-desc">abacaxi, sorvete de creme, leite condensado, malibu e vodka</div></div><div class="mi-price">R$ 49,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Maracujack</div><div class="mi-desc">jack daniel's, maracujá, limão e xarope de açúcar</div></div><div class="mi-price">R$ 52,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Submarino</div><div class="mi-desc">tequila, limão e cerveja</div></div><div class="mi-price">R$ 43,90</div></div>
+      </div>
+      <div class="menu-group">
+        <h3>Drink's Sem Álcool</h3>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Coffe Frappe</div><div class="mi-desc">sorvete de creme, café e chantily</div></div><div class="mi-price">R$ 39,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Hawaiana Kids</div><div class="mi-desc">abacaxi, sorvete de creme e leite condensado</div></div><div class="mi-price">R$ 38,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Kids on the Beach</div><div class="mi-desc">suco de laranja e grenadine</div></div><div class="mi-price">R$ 37,90</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Mix de Frutas</div><div class="mi-desc">frutas vermelhas, laranja e leite condensado</div></div><div class="mi-price">R$ 37,90</div></div>
+      </div>
+    </div>
+
+    <div class="menu-footnote">
+      <span>Cardápio sujeito a alterações de safra e disponibilidade.</span>
+      <a href="https://wa.me/5511954361716" target="_blank" rel="noopener">Confirmar um item pelo WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section id="bebidas-showcase">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="rule"></div>
+      <h2>O rodízio de <span class="script">caipirinha</span> é história por aqui</h2>
+      <p>Quase vinte sabores de caipirinha em copo de 500ml, além de uma carta de drinks autorais para quem prefere variar.</p>
+    </div>
+    <div class="drinks-grid">
+      <div class="drink-card">
+        <img src="assets/venue/drink-caipirinha.jpg" alt="Caipirinha Pitú com gengibre, caju e limão">
+        <div class="name">Caipirinha Gengibre, Caju &amp; Limão</div>
+        <div class="desc">Uma das combinações mais pedidas do cardápio de sabores.</div>
+      </div>
+      <div class="drink-card">
+        <img src="assets/venue/drink-tanqueray.jpg" alt="Drink com gin Tanqueray e morango">
+        <div class="name">Gin Tônica de Morango</div>
+        <div class="desc">Servido em taça, com Tanqueray e frutas frescas.</div>
+      </div>
+      <div class="drink-card">
+        <img src="assets/venue/drink-cheers.jpg" alt="Brinde com dois drinks coloridos">
+        <div class="name">Pra brindar com quem chegou</div>
+        <div class="desc">Bar completo de gin, vodka, whisky e cachaça artesanal.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ambiente">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="rule"></div>
+      <h2>O ambiente</h2>
+      <p>Fachada de tijolo, jardim vertical na entrada e um salão de madeira que enche rápido no fim de semana.</p>
+    </div>
+    <div class="gallery">
+      <a class="big" href="assets/venue/interior.jpg" target="_blank"><img src="assets/venue/interior.jpg" alt="Salão interno com estrutura de madeira"></a>
+      <a href="assets/venue/facade.jpg" target="_blank"><img src="assets/venue/facade.jpg" alt="Fachada de tijolo aparente do Donna Vitória"></a>
+      <a href="assets/venue/sign-plants.jpg" target="_blank"><img src="assets/venue/sign-plants.jpg" alt="Placa Boteco Donna Vitória em jardim vertical"></a>
+      <a href="assets/venue/buffet.jpg" target="_blank"><img src="assets/venue/buffet.jpg" alt="Mesa de buffet com diversos pratos"></a>
+      <a href="assets/food/tabua-frutos-mar.jpg" target="_blank"><img src="assets/food/tabua-frutos-mar.jpg" alt="Tábua de frutos do mar"></a>
+    </div>
+  </div>
+</section>
+
+<section id="local">
+  <div class="wrap local-grid">
+    <div>
+      <div class="rule"></div>
+      <h2 style="font-size:clamp(1.9rem,3vw,2.4rem); margin-bottom:26px;">Onde estamos</h2>
+
+      <div class="info-row">
+        <svg viewBox="0 0 24 24"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.4 7 11.5 7.3 11.8.2.2.5.2.7 0C12.3 21.5 20 15.4 20 10c0-4.4-3.6-8-8-8zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
+        <div>
+          <div class="lbl">Endereço</div>
+          <div class="val">Av. Lino Jardim, 646 — Jardim Bela Vista, Santo André - SP, 09041-030</div>
+        </div>
+      </div>
+      <div class="info-row">
+        <svg viewBox="0 0 24 24"><path d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm1-8.4 3.5 2-1 1.7L11 12V6h2v5.6z"/></svg>
+        <div>
+          <div class="lbl">Horário de funcionamento</div>
+          <div class="val">Terça a sábado, 12h às 00h<br>Domingo, 12h às 22h<br>Segunda-feira fechado</div>
+        </div>
+      </div>
+      <div class="info-row">
+        <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1.1L6.6 10.8z"/></svg>
+        <div>
+          <div class="lbl">Telefone</div>
+          <div class="val"><a href="tel:+551125345578">(11) 2534-5578</a></div>
+        </div>
+      </div>
+      <div class="info-row">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.5-.8-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5C10.1 9 9.6 7.8 9.4 7.3c-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.5.1-.7.3-.2.3-1 1-1 2.3s1 2.7 1.1 2.9c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3z"/><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.5A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .9.9-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Z"/></svg>
+        <div>
+          <div class="lbl">WhatsApp / Reservas</div>
+          <div class="val"><a href="https://wa.me/5511954361716" target="_blank" rel="noopener">(11) 95436-1716</a></div>
+        </div>
+      </div>
+      <div class="info-row">
+        <svg viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm6.5-8.2a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0zM12 2c-2.7 0-3.1 0-4.1.1-1 0-1.7.2-2.3.5A4.7 4.7 0 0 0 3 5.6c-.2.6-.4 1.3-.5 2.3C2.4 8.9 2.4 9.3 2.4 12s0 3.1.1 4.1c.1 1 .2 1.7.5 2.3a4.7 4.7 0 0 0 2.6 2.6c.6.2 1.3.4 2.3.5 1 .1 1.4.1 4.1.1s3.1 0 4.1-.1c1-.1 1.7-.2 2.3-.5a4.7 4.7 0 0 0 2.6-2.6c.2-.6.4-1.3.5-2.3.1-1 .1-1.4.1-4.1s0-3.1-.1-4.1c-.1-1-.2-1.7-.5-2.3a4.7 4.7 0 0 0-2.6-2.6c-.6-.2-1.3-.4-2.3-.5C15.1 2 14.7 2 12 2zm0 1.8c2.6 0 2.9 0 4 .1.9 0 1.5.2 1.8.3.5.2.8.4 1.1.7.3.3.5.6.7 1.1.1.3.3.9.3 1.8.1 1.1.1 1.4.1 4s0 2.9-.1 4c0 .9-.2 1.5-.3 1.8-.2.5-.4.8-.7 1.1-.3.3-.6.5-1.1.7-.3.1-.9.3-1.8.3-1.1.1-1.4.1-4 .1s-2.9 0-4-.1c-.9 0-1.5-.2-1.8-.3-.5-.2-.8-.4-1.1-.7-.3-.3-.5-.6-.7-1.1-.1-.3-.3-.9-.3-1.8-.1-1.1-.1-1.4-.1-4s0-2.9.1-4c0-.9.2-1.5.3-1.8.2-.5.4-.8.7-1.1.3-.3.6-.5 1.1-.7.3-.1.9-.3 1.8-.3 1.1-.1 1.4-.1 4-.1z"/></svg>
+        <div>
+          <div class="lbl">Redes sociais</div>
+          <div class="val">@donnavitoriabar</div>
+        </div>
+      </div>
+
+      <div class="social-row">
+        <a href="https://www.instagram.com/donnavitoriabar/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2c-2.7 0-3.1 0-4.1.1-1 0-1.7.2-2.3.5A4.7 4.7 0 0 0 3 5.2c-.2.6-.4 1.3-.5 2.3C2.4 8.5 2.4 8.9 2.4 12s0 3.5.1 4.5c.1 1 .2 1.7.5 2.3a4.7 4.7 0 0 0 2.6 2.6c.6.2 1.3.4 2.3.5 1 .1 1.4.1 4.1.1s3.1 0 4.1-.1c1-.1 1.7-.2 2.3-.5a4.7 4.7 0 0 0 2.6-2.6c.2-.6.4-1.3.5-2.3.1-1 .1-1.4.1-4.5s0-3.5-.1-4.5c-.1-1-.2-1.7-.5-2.3a4.7 4.7 0 0 0-2.6-2.6c-.6-.2-1.3-.4-2.3-.5C15.1 2 14.7 2 12 2zm0 5a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm6.4-2.2a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/botecodonnaviitoria/?locale=pt_BR" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M13 22v-9h3l.5-3.5H13V7.4c0-1 .3-1.7 1.7-1.7H17V2.4C16.6 2.3 15.4 2 14 2c-2.9 0-4.9 1.7-4.9 5v2.5H6V13h3v9h4z"/></svg>
+        </a>
+        <a href="https://www.threads.com/@donnavitoriabar" target="_blank" rel="noopener" aria-label="Threads">
+          <svg viewBox="0 0 24 24"><path d="M16.5 11.1c-.1-3.5-2-5.6-5.4-5.6-2 0-3.6.8-4.6 2.3l1.6 1.1c.7-1 1.6-1.5 2.9-1.5 1.8 0 2.9 1 3.1 2.7-.7-.1-1.5-.2-2.3-.1-2.7.1-4.5 1.5-4.4 3.7.1 2.1 1.9 3.3 4.2 3.2 1.9-.1 3.1-1 3.7-2.2.4 1 .4 2 .4 2h1.9c0-.5-.1-1.8-.6-3.1.5-.9.7-2 .5-2.5zm-4.6 4.6c-1.2.1-2-.4-2.1-1.3-.1-1 .8-1.6 2.2-1.7.5 0 1.1 0 1.8.1-.2 1.8-1 2.8-1.9 2.9zM12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="mapbox">
+      <iframe src="https://www.google.com/maps?q=Av.+Lino+Jardim,+646+-+Jardim+Bela+Vista,+Santo+Andre+-+SP,+09041-030&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa Donna Vitória"></iframe>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-inner">
+    <div>
+      <span class="script">Donna Vitória</span>
+      <div class="fine" style="margin-top:4px;">Av. Lino Jardim, 646 — Vila Bastos, Santo André - SP</div>
+    </div>
+    <div class="fine">© <span id="year"></span> Donna Vitória Boteco Bar &amp; Grill. Todos os direitos reservados.</div>
+  </div>
+</footer>
+
+<script>
+  // Nav scroll state
+  const nav = document.getElementById('siteNav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 60) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  });
+
+  // Tabs
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  const panels = document.querySelectorAll('.menu-panel');
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabBtns.forEach(b => b.classList.remove('active'));
+      panels.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('panel-' + btn.dataset.tab).classList.add('active');
+    });
+  });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

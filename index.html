@@ -183,7 +183,6 @@
   .dest-card.short{min-height:250px;}
 
   /* ---------- CARDAPIO TABS ---------- */
-  #cardapio{background:var(--bg);}
   .tabs{
     display:flex; gap:10px; overflow-x:auto; padding-bottom:6px; margin-bottom:40px;
     scrollbar-width:none;
@@ -287,8 +286,12 @@
     .gallery{grid-template-columns:repeat(2,1fr); grid-auto-rows:150px;}
     .gallery a.big{grid-column:span 2; grid-row:span 2;}
     .local-grid{grid-template-columns:1fr; gap:36px;}
-    .badge{padding:16px 24px;}
+    .badge{padding:16px 24px; margin-left:auto; margin-right:auto;}
     .badge .wordmark{font-size:2.6rem;}
+    .hero-inner{text-align:center; display:flex; flex-direction:column; align-items:center;}
+    .hero h1{max-width:100%;}
+    .hero p.lede{max-width:100%; margin-left:auto; margin-right:auto;}
+    .hero-actions{justify-content:center;}
   }
 </style>
 </head>
@@ -299,7 +302,7 @@
     <div class="nav-logo">Donna Vitória</div>
     <nav class="links">
       <a href="#sobre">Sobre</a>
-      <a href="#cardapio">Cardápio</a>
+      <a href="https://drive.google.com/file/d/1YbNLUieELNqXx96rVOba9KU48LMWEHB4/view" target="_blank" rel="noopener">Cardápio</a>
       <a href="#bebidas-showcase">Bebidas</a>
       <a href="#ambiente">Ambiente</a>
       <a href="#local">Localização</a>
@@ -319,7 +322,7 @@
     <h1>Tijolo aparente, jardim vertical e a brasa acesa desde o começo da noite, na Vila Bastos.</h1>
     <p class="lede">Petiscos generosos, carnes na brasa e caipirinhas de mais de vinte sabores num salão de pé-direito alto e varanda aberta para a Lino Jardim.</p>
     <div class="hero-actions">
-      <a class="btn btn-primary" href="#cardapio">Ver cardápio completo</a>
+      <a class="btn btn-primary" href="https://drive.google.com/file/d/1YbNLUieELNqXx96rVOba9KU48LMWEHB4/view" target="_blank" rel="noopener">Ver cardápio completo</a>
       <a class="btn btn-outline" href="https://wa.me/5511954361716" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.5-.8-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5C10.1 9 9.6 7.8 9.4 7.3c-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.5.1-.7.3-.2.3-1 1-1 2.3s1 2.7 1.1 2.9c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3z"/><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.5A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .9.9-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Z"/></svg>
         Falar no WhatsApp
@@ -375,330 +378,6 @@
         <img src="assets/food/tabua-donna-vitoria.jpg" alt="Tábua Donna Vitória com picanha, linguiça e queijo coalho">
         <div class="cap"><h3>Tábua Donna Vitória</h3><div class="price">R$ 240,00</div></div>
       </div>
-    </div>
-  </div>
-</section>
-
-<section id="cardapio">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="rule"></div>
-      <h2>Cardápio</h2>
-      <p>Todos os preços conforme o cardápio atual do salão. Podem mudar sem aviso prévio.</p>
-    </div>
-
-    <div class="tabs" id="tabs">
-      <button class="tab-btn active" data-tab="entradas">Entradas &amp; Petiscos</button>
-      <button class="tab-btn" data-tab="brasa">Carnes na Brasa</button>
-      <button class="tab-btn" data-tab="peixes">Peixes &amp; Especiais</button>
-      <button class="tab-btn" data-tab="massas">Massas, Risotos &amp; Saladas</button>
-      <button class="tab-btn" data-tab="kids">Kids &amp; Lanches</button>
-      <button class="tab-btn" data-tab="sobremesas">Sobremesas</button>
-      <button class="tab-btn" data-tab="cervejas">Cervejas &amp; Destilados</button>
-      <button class="tab-btn" data-tab="caipirinha">Caipirinha 500ml</button>
-      <button class="tab-btn" data-tab="drinks">Drinks</button>
-    </div>
-
-    <!-- ENTRADAS -->
-    <div class="menu-panel active" id="panel-entradas">
-      <div class="menu-group">
-        <h3>Entradas</h3>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Palmito Gratinado</div></div><div class="mi-price">R$ 99,00</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Escondidinho de Carne Seca</div><div class="mi-desc">com mandioca gratinado</div></div><div class="mi-price">R$ 92,00</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Escondidinho de Filé Mignon</div><div class="mi-desc">com mandioca gratinado</div></div><div class="mi-price">R$ 92,00</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Burrata</div><div class="mi-desc">ao molho de pesto com tomate cereja</div></div><div class="mi-price">R$ 75,00</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Brusqueta — Tomate, Mussarela e Manjericão</div><div class="mi-desc">6 unidades</div></div><div class="mi-price">R$ 59,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Brusqueta — Carne Seca com Queijo Coalho</div><div class="mi-desc">6 unidades</div></div><div class="mi-price">R$ 59,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Carpaccio</div><div class="mi-desc">finas fatias de filé mignon, molho de alcaparras, mostarda e parmesão, acompanha torradas</div></div><div class="mi-price">R$ 69,90</div></div>
-      </div>
-      <div class="menu-group">
-        <h3>Bolinhos <span class="note">especial 8 unidades</span></h3>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Bolinho de Bacalhau</div></div><div class="mi-price">R$ 84,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Bolinho de Costela Casquerada</div></div><div class="mi-price">R$ 78,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Bolinho de Mandioca com Carne Seca</div></div><div class="mi-price">R$ 78,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Bolinho de Calabresa com Queijo</div></div><div class="mi-price">R$ 68,90</div></div>
-      </div>
-      <div class="menu-group">
-        <h3>Comida de Boteco</h3>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Batata Frita Simples</div></div><div class="mi-price">R$ 49,00</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Batata Frita com Cheddar e Bacon</div></div><div class="mi-price">R$ 65,00</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Batata Frita com Aligot e Costela Desfiada</div></div><div class="mi-price">R$ 69,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Mandioca Frita</div></div><div class="mi-price">R$ 52,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Polenta com Parmesão</div></div><div class="mi-price">R$ 52,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Dadinho de Tapioca</div></div><div class="mi-price">R$ 60,00</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Frango à Passarinho com Polenta Frita</div></div><div class="mi-price">R$ 75,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Calabresa Acebolada com Mandioca Frita</div></div><div class="mi-price">R$ 79,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Torresmo no Rolo Donna Vitória</div></div><div class="mi-price">R$ 82,00</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Isca de Tilápia com Molho Tártaro</div></div><div class="mi-price">R$ 79,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Provolone à Milanesa</div></div><div class="mi-price">R$ 79,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Isca de Frango com Molho da Casa</div></div><div class="mi-price">R$ 69,90</div></div>
-      </div>
-      <div class="menu-group">
-        <h3>Pastel Donna Vitória <span class="note">10 unidades</span></h3>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Carne, Queijo, Palmito e Costela</div><div class="mi-desc">acompanha vinagrete</div></div><div class="mi-price">R$ 79,90</div></div>
-      </div>
-    </div>
-
-    <!-- CARNES NA BRASA -->
-    <div class="menu-panel" id="panel-brasa">
-      <div class="menu-group">
-        <h3>Aperitivo Donna Vitória</h3>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Filé Mignon ao Molho Madeira</div><div class="mi-desc">acompanha pão</div></div><div class="mi-price">R$ 149,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Filé Mignon Gratinado ao Molho de Gorgonzola</div><div class="mi-desc">acompanha pão</div></div><div class="mi-price">R$ 158,00</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Filé Mignon Gratinado com Catupiry e Parmesão</div><div class="mi-desc">acompanha pão</div></div><div class="mi-price">R$ 159,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Picanha Aperitivo</div><div class="mi-desc">acompanha pão, vinagrete e farofa</div></div><div class="mi-price">R$ 159,90</div></div>
-      </div>
-      <div class="menu-group">
-        <h3>Linguiça Artesanal na Brasa</h3>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Gorgonzola com Mel</div><div class="mi-desc">toque de hortelã, acompanha pão, vinagrete e farofa</div></div><div class="mi-price">R$ 99,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Raspa de Limão Siciliano com Dedo de Moça</div><div class="mi-desc">acompanha pão, vinagrete e farofa</div></div><div class="mi-price">R$ 99,90</div></div>
-      </div>
-      <div class="menu-group">
-        <h3>Pratos à la Carte na Brasa <span class="note">serve de 2 a 3 pessoas</span></h3>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Costela Casquerada</div><div class="mi-desc">mandioca cozida, arroz branco, feijão tropeiro, vinagrete e farofa</div></div><div class="mi-price">R$ 210,00</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Cupim Casquerado</div><div class="mi-desc">arroz biro biro, feijão tropeiro, vinagrete e farofa</div></div><div class="mi-price">R$ 189,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Costelinha com Barbecue</div><div class="mi-desc">acompanha batata bolinha, vinagrete e farofa</div></div><div class="mi-price">R$ 189,00</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Bife Ancho Angus na Crosta de Alho</div><div class="mi-desc">arroz biro biro, batata frita, vinagrete e farofa</div></div><div class="mi-price">R$ 239,00</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Bife Ancho Angus</div><div class="mi-desc">arroz branco, batata frita, vinagrete e farofa</div></div><div class="mi-price">R$ 199,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Filé à Parmegiana Gratinado</div><div class="mi-desc">arroz branco e batata frita</div></div><div class="mi-price">R$ 189,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Fraldinha na Brasa</div><div class="mi-desc">arroz branco, batata frita, vinagrete e farofa</div></div><div class="mi-price">R$ 189,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Maminha na Telha com Aligot</div><div class="mi-desc">mandioca frita, arroz biro biro, vinagrete e farofa</div></div><div class="mi-price">R$ 199,00</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Picanha Donna Vitória</div><div class="mi-desc">arroz branco, batata frita, vinagrete e farofa</div></div><div class="mi-price">R$ 210,00</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Picanha no Aligot</div><div class="mi-desc">arroz biro biro, batata rústica, vinagrete e farofa</div></div><div class="mi-price">R$ 239,00</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Tábua Donna Vitória</div><div class="mi-desc">picanha, tulipa, linguiça toscana, coração de frango, costelinha de porco e queijo coalho, com arroz branco, vinagrete e farofa</div></div><div class="mi-price">R$ 240,00</div></div>
-      </div>
-    </div>
-
-    <!-- PEIXES & ESPECIAIS -->
-    <div class="menu-panel" id="panel-peixes">
-      <div class="menu-group">
-        <h3>Peixes &amp; Frutos do Mar <span class="note">para 2 ou 3 pessoas</span></h3>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Tábua Frutos do Mar</div><div class="mi-desc">camarão, lula, saint peter e salmão, servido com arroz, purê de batata e legumes</div></div><div class="mi-price">R$ 250,00</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Salmão ao Molho de Maracujá</div><div class="mi-desc">arroz de brócolis, legumes salteados na manteiga</div></div><div class="mi-price">R$ 210,00</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Peixe Donna Vitória</div><div class="mi-desc">filé de saint peter, servido com arroz branco e legumes</div></div><div class="mi-price">R$ 189,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Chapa Donna Vitória</div><div class="mi-desc">filé mignon, mussarela, arroz birô biro, batata frita, rúcula e tomate seco</div></div><div class="mi-price">R$ 199,90</div></div>
-      </div>
-      <div class="menu-group">
-        <h3>Pratos Executivos <span class="note">de terça a sexta</span></h3>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Filé Mignon Parmegiana</div><div class="mi-desc">arroz branco e batata frita</div></div><div class="mi-price">R$ 68,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Bife Ancho Angus</div><div class="mi-desc">arroz branco, batata frita, vinagrete e farofa</div></div><div class="mi-price">R$ 66,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Salmão com Molho de Maracujá</div><div class="mi-desc">arroz branco e legumes salteados</div></div><div class="mi-price">R$ 69,90</div></div>
-      </div>
-    </div>
-
-    <!-- MASSAS -->
-    <div class="menu-panel" id="panel-massas">
-      <div class="menu-group">
-        <h3>Salada</h3>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Salada Donna Vitória</div><div class="mi-desc">rúcula, tomate seco e mussarela de búfala</div></div><div class="mi-price">R$ 55,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Salada Verde</div><div class="mi-desc">alface americano, rúcula, alface crespa, palmito e tomate</div></div><div class="mi-price">R$ 48,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Salada Caesar</div><div class="mi-desc">alface americano, tiras de frango crocante, molho caesar e parmesão ralado</div></div><div class="mi-price">R$ 49,90</div></div>
-      </div>
-      <div class="menu-group">
-        <h3>Massas e Risotos <span class="note">pratos individuais</span></h3>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Risoto de Palmito</div></div><div class="mi-price">R$ 69,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Risoto de Funghi</div></div><div class="mi-price">R$ 79,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Risoto de Tomate Seco</div></div><div class="mi-price">R$ 69,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Spaghetti</div><div class="mi-desc">sugo ou molho branco</div></div><div class="mi-price">R$ 59,00</div></div>
-      </div>
-      <div class="menu-group">
-        <h3>Escolha sua Proteína</h3>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Medalhão de Mignon</div></div><div class="mi-price">R$ 39,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Salmão Grelhado</div></div><div class="mi-price">R$ 39,90</div></div>
-      </div>
-      <div class="menu-group">
-        <h3>Caldos <span class="note">300ml</span></h3>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Canja, Feijão, Caldo Verde ou Mandioquinha</div><div class="mi-desc">acompanha torradas e queijo ralado</div></div><div class="mi-price">R$ 39,90</div></div>
-      </div>
-    </div>
-
-    <!-- KIDS & LANCHES -->
-    <div class="menu-panel" id="panel-kids">
-      <div class="menu-group">
-        <h3>Pratos Kids</h3>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Filé Mignon</div><div class="mi-desc">servido com arroz, feijão e fritas</div></div><div class="mi-price">R$ 39,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Filé de Frango</div><div class="mi-desc">servido com arroz, feijão e fritas</div></div><div class="mi-price">R$ 35,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Penne Mignon</div></div><div class="mi-price">R$ 46,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Penne Frango</div></div><div class="mi-price">R$ 42,90</div></div>
-      </div>
-      <div class="menu-group">
-        <h3>Lanches <span class="note">feitos na baguete</span></h3>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Lanche Donna Vitória</div><div class="mi-desc">filé mignon, queijo, cebola roxa, rúcula e molho da casa, acompanha fritas</div></div><div class="mi-price">R$ 59,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">X-Burguer</div><div class="mi-desc">hambúrguer, queijo e molho, feito no pão de brioche, acompanha fritas</div></div><div class="mi-price">R$ 59,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">X-Salada Bacon</div><div class="mi-desc">hambúrguer, queijo, alface, tomate e bacon, feito no pão de brioche, acompanha fritas</div></div><div class="mi-price">R$ 79,90</div></div>
-      </div>
-    </div>
-
-    <!-- SOBREMESAS -->
-    <div class="menu-panel" id="panel-sobremesas">
-      <div class="menu-group">
-        <h3>Sobremesa</h3>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Petit Gateau</div></div><div class="mi-price">R$ 45,00</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Creme de Papaya</div></div><div class="mi-price">R$ 39,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Torta Holandesa</div></div><div class="mi-price">R$ 45,00</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Pudim</div></div><div class="mi-price">R$ 39,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Brownie com Sorvete de Creme</div></div><div class="mi-price">R$ 45,00</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Taça de Sorvete</div><div class="mi-desc">2 bolas de sorvete</div></div><div class="mi-price">R$ 32,00</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Taça Donna Vitória</div><div class="mi-desc">3 bolas de sorvete, crosta de leite ninho, nutella na borda e chocolate kinder</div></div><div class="mi-price">R$ 69,90</div></div>
-      </div>
-    </div>
-
-    <!-- CERVEJAS & DESTILADOS -->
-    <div class="menu-panel" id="panel-cervejas">
-      <div class="menu-group">
-        <h3>Bebidas sem Álcool</h3>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Refrigerantes</div><div class="mi-desc">água tônica, coca-cola, coca zero, fanta uva, fanta laranja, guaraná, soda</div></div><div class="mi-price">R$ 15,00</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">H2O Limão ou Limoneto</div></div><div class="mi-price">R$ 16,00</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Água sem/com Gás</div></div><div class="mi-price">R$ 10,50</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Água de Coco</div></div><div class="mi-price">R$ 15,00</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Sucos Naturais</div><div class="mi-desc">abacaxi, abacaxi com hortelã, laranja, limão, morango, maracujá</div></div><div class="mi-price">R$ 15,00</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Café Expresso</div></div><div class="mi-price">R$ 13,00</div></div>
-      </div>
-      <div class="menu-group">
-        <h3>Cervejas Long Neck</h3>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Heineken</div></div><div class="mi-price">R$ 19,00</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Malzebier</div></div><div class="mi-price">R$ 15,00</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Corona</div></div><div class="mi-price">R$ 20,00</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Smirnoff Ice</div></div><div class="mi-price">R$ 17,00</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Heineken 0% Álcool</div></div><div class="mi-price">R$ 19,00</div></div>
-      </div>
-      <div class="menu-group">
-        <h3>Cervejas 600ml &amp; Chopp</h3>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Heineken 600ml</div></div><div class="mi-price">R$ 25,00</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Original 600ml</div></div><div class="mi-price">R$ 23,00</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Chopp Pilsen</div><div class="mi-desc">300ml / 500ml</div></div><div class="mi-price">R$ 13,90 / 19,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Chopp Brahma Pilsen</div><div class="mi-desc">300ml / 500ml</div></div><div class="mi-price">R$ 15,90 / 19,90</div></div>
-      </div>
-      <div class="menu-group">
-        <h3>Cervejas Especiais</h3>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Baden Baden</div><div class="mi-desc">Peach, American IPA, Witbier, Golden ou Cristal</div></div><div class="mi-price">R$ 39,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Erdinger Weissbier</div></div><div class="mi-price">R$ 39,90</div></div>
-      </div>
-      <div class="menu-group">
-        <h3>Aperitivos &amp; Destilados</h3>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Campari</div></div><div class="mi-price">R$ 29,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Cointreau</div></div><div class="mi-price">R$ 24,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Amarula</div></div><div class="mi-price">R$ 30,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Licor 43</div></div><div class="mi-price">R$ 39,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Steinhaeger Nacional / Importado</div></div><div class="mi-price">R$ 24,90 / 39,00</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Rum Bacardi Ouro ou Prata</div></div><div class="mi-price">R$ 20,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Jägermeister</div></div><div class="mi-price">R$ 29,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Conhaque Domecq</div></div><div class="mi-price">R$ 25,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Martini</div></div><div class="mi-price">R$ 25,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Tequila José Cuervo Prata / Ouro</div></div><div class="mi-price">R$ 32,90 / 35,00</div></div>
-      </div>
-      <div class="menu-group">
-        <h3>Gin</h3>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Tanqueray</div></div><div class="mi-price">R$ 59,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Bombay</div></div><div class="mi-price">R$ 42,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Beefeater</div></div><div class="mi-price">R$ 42,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Gordon's</div></div><div class="mi-price">R$ 42,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Tropical</div></div><div class="mi-price">R$ 49,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Melancia</div></div><div class="mi-price">R$ 49,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Gin Tônica sabores</div><div class="mi-desc">cajú classic, pepino, limão siciliano, zimbro, frutas vermelhas</div></div></div>
-      </div>
-      <div class="menu-group">
-        <h3>Vodka <span class="note">dose / garrafa</span></h3>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Absolut</div></div><div class="mi-price">R$ 38,90 / 320,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Grey Goose</div></div><div class="mi-price">R$ 44,90 / 360,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Ciroc</div></div><div class="mi-price">R$ 39,90 / 360,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Smirnoff</div></div><div class="mi-price">R$ 34,90 / 220,90</div></div>
-      </div>
-      <div class="menu-group">
-        <h3>Cachaça</h3>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Sagatiba Ouro ou Prata / Busca Vida / Seleta / Salinas / Boazinha</div></div><div class="mi-price">R$ 25,00</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Weber Haus Prata</div></div><div class="mi-price">R$ 29,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Weber Haus 7 Madeiras</div></div><div class="mi-price">R$ 32,00</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Espírito de Minas</div></div><div class="mi-price">R$ 29,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Ypióca Prata / Ouro</div></div><div class="mi-price">R$ 14,90 / 16,90</div></div>
-      </div>
-      <div class="menu-group">
-        <h3>Whisky <span class="note">dose / garrafa</span></h3>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Red Label</div></div><div class="mi-price">R$ 45,00 / 280,00</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Black Label</div></div><div class="mi-price">R$ 50,00 / 390,00</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Gold Label</div></div><div class="mi-price">R$ 60,00 / 600,00</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Jack Daniel's</div></div><div class="mi-price">R$ 50,00 / 350,00</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Jack Daniel's Fire</div></div><div class="mi-price">R$ 50,00 / 350,00</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Jack Daniel's Honey</div></div><div class="mi-price">R$ 50,00 / 350,00</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Chivas</div></div><div class="mi-price">R$ 60,00 / 390,00</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Buchanan's</div></div><div class="mi-price">R$ 60,00 / 390,00</div></div>
-      </div>
-      <div class="menu-group">
-        <h3>Energético</h3>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Red Bull Tradicional, Tropical ou Melancia</div></div><div class="mi-price">R$ 25,00</div></div>
-      </div>
-    </div>
-
-    <!-- CAIPIRINHA -->
-    <div class="menu-panel" id="panel-caipirinha">
-      <div class="menu-group">
-        <h3>Caipirinha 500ml <span class="note">escolha a base</span></h3>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Aguardente, Cachaça Especial, Espírito de Minas, Saquê, Smirnoff ou Steinhager</div></div><div class="mi-price">R$ 42,00</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Absolut ou Ciroc</div></div><div class="mi-price">R$ 49,00</div></div>
-      </div>
-      <div class="menu-group">
-        <h3>Sabores</h3>
-        <div class="flavor-list">
-          <div>Frutas Vermelhas</div>
-          <div>Três Limões com Melado de Cana</div>
-          <div>Banana, Canela e Limão</div>
-          <div>Tangerina com Pimenta Rosa</div>
-          <div>Abacaxi com Gengibre</div>
-          <div>Jabuticaba</div>
-          <div>Limão com Yakult</div>
-          <div>Melancia com Maracujá</div>
-          <div>Abacaxi com Framboesa</div>
-          <div>Pitaya</div>
-          <div>Manga com Maracujá</div>
-          <div>Tangerina com Maracujá</div>
-          <div>Abacaxi, Limão e Maracujá</div>
-          <div>Morango com Hortelã</div>
-          <div>Kiwi com Morango</div>
-          <div>Lima da Pérsia com Gengibre</div>
-          <div>Vinho com Limão</div>
-          <div>Seriguela com Limão e Mel</div>
-          <div>Uva, Maracujá e Hortelã</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- DRINKS -->
-    <div class="menu-panel" id="panel-drinks">
-      <div class="menu-group">
-        <h3>Drink's</h3>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Dry Martini</div><div class="mi-desc">gin, vermute e azeitona</div></div><div class="mi-price">R$ 52,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Mojito</div><div class="mi-desc">rum, hortelã, limão e água com gás</div></div><div class="mi-price">R$ 44,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Marguerita</div><div class="mi-desc">limão, tequila, cointreau, sal</div></div><div class="mi-price">R$ 47,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Espanhola</div><div class="mi-desc">abacaxi, leite condensado, vinho tinto</div></div><div class="mi-price">R$ 43,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Lagoa Azul</div><div class="mi-desc">vodka, suco de limão, curaçau blue, soda limonada</div></div><div class="mi-price">R$ 44,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Piña Colada</div><div class="mi-desc">leite de coco, martini, rum, suco de abacaxi, leite condensado</div></div><div class="mi-price">R$ 44,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Cuba Libre</div><div class="mi-desc">rum bacardi, suco de limão, coca-cola</div></div><div class="mi-price">R$ 43,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Sex on the Beach</div><div class="mi-desc">vodka, licor de pêssego, suco de laranja, xarope de groselha</div></div><div class="mi-price">R$ 44,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Negroni</div><div class="mi-desc">campari, carpano, gin, fatia de laranja</div></div><div class="mi-price">R$ 49,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Aperol Spritz</div><div class="mi-desc">aperol, prosecco, água com gás, fatia de laranja</div></div><div class="mi-price">R$ 48,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Sangria</div><div class="mi-desc">vinho tinto, combinação de frutas, conhaque, soda, licor de laranja, licor de pêssego — 1 litro</div></div><div class="mi-price">R$ 125,00</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Coronita</div><div class="mi-desc">tequila prata, limão, licor de laranja, sal, coronita</div></div><div class="mi-price">R$ 58,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Moscow Mule</div><div class="mi-desc">xarope de gengibre, limão, vodka, espuma de gengibre</div></div><div class="mi-price">R$ 49,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Jorge Amado</div><div class="mi-desc">cachaça, gelo, limão e maracujá</div></div><div class="mi-price">R$ 45,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Cosmopolitan</div><div class="mi-desc">vodka, gramberry, limão e cointreau</div></div><div class="mi-price">R$ 46,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Whisky Sour</div><div class="mi-desc">limão, xarope de açúcar e jack daniel's</div></div><div class="mi-price">R$ 49,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Carajillo</div><div class="mi-desc">licor 43 e café</div></div><div class="mi-price">R$ 47,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Donna Hawaiana</div><div class="mi-desc">abacaxi, sorvete de creme, leite condensado, malibu e vodka</div></div><div class="mi-price">R$ 49,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Maracujack</div><div class="mi-desc">jack daniel's, maracujá, limão e xarope de açúcar</div></div><div class="mi-price">R$ 52,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Submarino</div><div class="mi-desc">tequila, limão e cerveja</div></div><div class="mi-price">R$ 43,90</div></div>
-      </div>
-      <div class="menu-group">
-        <h3>Drink's Sem Álcool</h3>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Coffe Frappe</div><div class="mi-desc">sorvete de creme, café e chantily</div></div><div class="mi-price">R$ 39,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Hawaiana Kids</div><div class="mi-desc">abacaxi, sorvete de creme e leite condensado</div></div><div class="mi-price">R$ 38,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Kids on the Beach</div><div class="mi-desc">suco de laranja e grenadine</div></div><div class="mi-price">R$ 37,90</div></div>
-        <div class="menu-item"><div class="mi-left"><div class="mi-name">Mix de Frutas</div><div class="mi-desc">frutas vermelhas, laranja e leite condensado</div></div><div class="mi-price">R$ 37,90</div></div>
-      </div>
-    </div>
-
-    <div class="menu-footnote">
-      <span>Cardápio sujeito a alterações de safra e disponibilidade.</span>
-      <a href="https://wa.me/5511954361716" target="_blank" rel="noopener">Confirmar um item pelo WhatsApp</a>
     </div>
   </div>
 </section>
@@ -824,18 +503,6 @@
   window.addEventListener('scroll', () => {
     if (window.scrollY > 60) nav.classList.add('scrolled');
     else nav.classList.remove('scrolled');
-  });
-
-  // Tabs
-  const tabBtns = document.querySelectorAll('.tab-btn');
-  const panels = document.querySelectorAll('.menu-panel');
-  tabBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      tabBtns.forEach(b => b.classList.remove('active'));
-      panels.forEach(p => p.classList.remove('active'));
-      btn.classList.add('active');
-      document.getElementById('panel-' + btn.dataset.tab).classList.add('active');
-    });
   });
 
   document.getElementById('year').textContent = new Date().getFullYear();
